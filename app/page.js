@@ -9,9 +9,9 @@ const page = () => {
   const [Images, setImages] = useState([])
 
   // useEffect - function automatically call hojata hai bina button dabaye jese yaha hua
-  useEffect(() => {
-    getImages()
-  }, [])
+  // useEffect(() => {
+  //   getImages()
+  // }, [])
   
 
 
