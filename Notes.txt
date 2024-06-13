@@ -32,6 +32,18 @@ NOTE -
 REACT jab tak library thi na vo client side rendering kar rhhi thi.
 CSR - Jaha se user webiste dekh raha hai uski side se rendering hoti hai, sirf frontend ka part hota hai.
 
+In this, we will learn React with the help of next.js
+Why?
+----
+1. React mein directly routing nhi krskte usme react router use krna padta hai, but next mein inbuilt routing hai.
+2. React ek library jiske basis pr yeh next.js framework bana hai.
+3. Next.js mein SSR toh data fast flow krega.
+4. mtlb folder next ka banaya hai, use next ki cheezein kr rhe hai lekin react ke jo code components hai vo bhi 
+   sikh rhe h sath sath next.js ke integration bhi sikh rhe hai.
+
+
+
+
 REACTJS + NEXTJS -
 NEXTJS is a Framework toh isey react ke paas power aagyi hai ki vo SSR bhi kar skta hai, isliye AB 2 side se hoti hai CSR AND SSR .
 
