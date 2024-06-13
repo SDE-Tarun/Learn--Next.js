@@ -1,0 +1,838 @@
+REACT JS | LEARN WHAT MATTERS
+
+ADVANCED TOPICS FOR REACT -
+
+1. ES5 VS ES6
+2. ARRAY, OBJECTS, FUNCTIONS
+3. ARROW FUNCTIONS / NORMAL FUNCTIONS
+4. ARRYA METHODS ( MAP, FILTER ,REDUCE, FIND, FINDINDEX )
+5. DESTRUCTURING
+6. REST SPREAD
+7. TRY CATCH
+8. AYSNC AWAIT
+9. PROMISES
+
+INTRODUCTION -
+
+LIBRARY VS FRAMEWORK -
+
+REACT IS A LIBRARY
+LIBRARY - Single Feature/work ke liye use krte hai.
+          Jese mene ek plot kharida toh plot ek liye library use kari.
+          Jese neev rakhne ke liye library use kari.
+          Ek library use kari jise mein pillars khade kiye.
+          Toh is tarah se hi website ko customizable banate hai.
+
+ANGULAR IS A LIBRARY
+FRAMEWORK- Jese mujhe ghar banana hai toh mere pass 2 options hai -
+            1. Mein bana banaya ghar kharid loon but isey mein ghar mein zyda changes nahi kar sakta, 
+               mtlb jo cheezein hai unhi ko use kar loon kuch kuch changes ke sath jese ghar ka color change kar loon.
+
+NOTE -
+REACT jab tak library thi na vo client side rendering kar rhhi thi.
+CSR - Jaha se user webiste dekh raha hai uski side se rendering hoti hai, sirf frontend ka part hota hai.
+
+REACTJS + NEXTJS -
+NEXTJS is a Framework toh isey react ke paas power aagyi hai ki vo SSR bhi kar skta hai, isliye AB 2 side se hoti hai CSR AND SSR .
+
+STARTING WITH REACT JS -
+
+1. Install Node.js - Runtime environment of JS
+2. Create-Next-app (React Folder Description) -
+   a) npx create-react-app APPNAME or . / npx create-next-app APPNAME or .
+     APPNAME kroge toh jis folder mein node package execute kroge vaha par ek folder banjayega appname se hi aur usme apki react application hogi.
+     . kroge toh vo same folder mein h react application setup krdega bina new folder banaye.
+   b) npm create vite@latest
+
+3. useState Hook (variable of react) and Real DOM and Virtual DOM
+4. Calling functions in react (Functions)
+5. adding normal / module CSS in react and useRef (for Validation, DOM Properties)
+6. Todo App
+7. Breaking the components
+8. props ( normal data, childern )
+9. Introduction to class components (via lifecycle method) *not important
+10.useEffect lifecycle hook
+11.Implementing ajax in react (fetch/axios)
+12.Gallery app using lorem ipsum api (react pagination)
+13.Routing
+14.Showing flash Message (react toastify)
+15.context api (higher order components {HOC}, higher order functions {HOF})
+16.Cashbook app
+17.Redux Toolkit (autonomous)
+18.TMDB (app)
+19.Deployment via Netlify
+
+--------------------------------------------------------------------------------------------------------------------
+After step 2 
+CMD -
+
+tarunkumar@Taruns-MacBook-Air React % npx create-next-app
+Need to install the following packages:
+create-next-app@14.2.3
+Ok to proceed? (y) y
+✔ What is your project named? … react-for-youtube
+✔ Would you like to use TypeScript? … No / Yes
+✔ Would you like to use ESLint? … No / Yes
+✔ Would you like to use Tailwind CSS? … No / Yes
+✔ Would you like to use `src/` directory? … No / Yes
+✔ Would you like to use App Router? (recommended) … No / Yes
+✔ Would you like to customize the default import alias (@/*)? … No / Yes
+Creating a new Next.js app in /Users/tarunkumar/Desktop/React/react-for-youtube.
+
+Using npm.
+
+Initializing project with template: app-tw 
+
+
+Installing dependencies:
+- react
+- react-dom
+- next
+
+Installing devDependencies:
+- postcss
+- tailwindcss
+
+
+added 130 packages, and audited 131 packages in 31s
+
+31 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+Initialized a git repository.
+
+Success! Created react-for-youtube at /Users/tarunkumar/Desktop/React/react-for-youtube
+
+tarunkumar@Taruns-MacBook-Air React % cd react-for-youtube
+
+tarunkumar@Taruns-MacBook-Air React % code .
+
+Server Start - 
+tarunkumar@Taruns-MacBook-Air React % npm run dev
+http://localhost:3000
+
+----------------------------------------------------------------------------------------------------------------
+
+LETS LEARN FOLDER STRUCTURE-
+1. app folder - important folder hai yeh jisme meri page.js file hai yahi file meri browser par dikh rhi hai.
+2. page.js -> CTRL+A -> Backspace -> File empty
+3. Extensions mein jaake -> Simple React Snippets Install Krlo
+4. page.js file -> rafce -> 
+
+// Code
+import React from 'react' - apni file mein react jo bana banaya hai usko import kia use kia
+
+const page = () => {
+  return (
+    <div>page</div> - // JSX ELEMENT
+  )
+}
+
+export default page - react ya next ke paas bhejh rhe hai is page naam ke function ko taaki kisi aur file mein use kar saku.
+
+
+5. global.css file hai -> isme apki css hai sari
+6. Agar apko Tailwind css use krni hai toh ap bas yeh 3 line chord dena baaki sab remove krdo.
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+7. JSX - Javascript XML -> Javascript + HTML -> Javascript Ke andar HTMl likh skte hai.
+8. Real DOM VS Virtual DOM?
+   DOM - Document object module
+   REAL DOM - DOM Tree
+   --------
+   Window Object
+   |
+   html
+   |
+   body
+   |
+   div
+   |
+   element 1 - <h1></h1> , <p></p>, <button></button>
+   |
+   element 2 - <image></image>
+
+   Suppose i want to change <h1></h1> , Toh mera pura ka pura DOM Tree update hota hai.
+
+   Virtual DOM
+   -----------
+   --> Real DOM ki Copy Bana lega
+
+   --> Ek original copy hoga aur bhi copies bana lega jese -->  copy1, copy2
+
+   --> Maanlo ab mujhe sirf yeh h1 ko change karna tha toh yeh kya krega multiple copies mein se
+       manlo mene copy1 mein change krdia toh fir yeh original copy wale ke sath is copy ko compare karega
+       ki kya copy1 = copy 2 agar copy 1 aur copy 2 same hongi toh yeh sirf utna part h update kardega
+       Isey pure DOM ko dubara render ya reload krne se rok dega, Isko bolte hai Virtual DOM
+
+---------------------------------------------------------------------------------------------------------------
+Manlo mein chahta hu ki ek button pe click kru toh mere marks update hojaye-
+
+"use client" - Agar ap direct khud se change kroge toh react allow nahi krega isliye use client likhke kro
+               client side se kaam kar rhe ho isliye
+import React from 'react'
+
+const page = () => {
+  let marks = 80;
+  return (
+    <>
+    <h1>Hello my marks were {marks}</h1>
+    <button onClick={()=>{
+      marks = 33;
+    }}>Update</button>
+    </>
+  )
+}
+
+export default page
+
+--------------------------------------------------------------------------------------------------------------
+Note-
+
+Toh isey update nahi hoga kyunki react mein hum variable aise banate h nhi hai,
+Toh hum react mein variable banate hai with the help of useState hook
+
+usState - mtlb React ke variables
+
+Yeh directly nahi milta hume import karna padta hai.
+
+useStatesnippet + Enter --> const [first, setfirst] = useState(second);
+
+const [marks, setMarks] = useState(80);
+
+marks ki value vo rahegi jo ap useState mein likhte ho jese yaha hai 80 
+setMarks() - Ek function hai jo marks ki value ko update karne ka kaam karega.
+--------------------------------------------------------------------------------------------------------------
+
+--> useState Hook (variable of react) and Real DOM and Virtual DOM
+--> Calling functions in react (Functions)
+
+"use client"
+import React, { useState } from 'react'
+
+const page = () => {
+  const [marks, setMarks] = useState(80)
+  // let marks = 80;
+  return (
+    <>
+    <h1>Hello my marks were {marks}</h1>
+    <button onClick={()=>{
+      setMarks(33);
+    }}>Update</button>
+    </>
+  )
+}
+
+export default page
+
+--------------------------------------------------------------------------------------------------------------
+
+--> Breaking the components
+Global css hata di usme likha
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gilroy'
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+page.js --> important file hai lekin iska papa kon hai?
+layout.js --> manlo index.html of your page file hai.
+
+layout.js file clean Krlo-
+-------------------------
+import "./globals.css";
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  );
+}
+
+Note -
+------
+children --> page.js file hai
+
+import "./globals.css";
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>hello{children}</body> --> Toh mera hello pehle print hoga then hamara children mtlb page.js file print hogi
+    </html>
+  );
+}
+
+Hum bahar mtlb sabse bahar banayenge ek folder Components
+Components kyu zarori hai? --> kyunki hum apne page.js file mein sara code nhi chahte rush nhi chahte isliye
+Components folder ke andar ek file banaya Header.js
+
+// Header.js file mein -
+------------------------
+rafce + Enter --> component ban gya aur export bhi hogya 
+Ab mujhe isko import krna padega jaha bhi use karna hai mtlb Header.js ko lagana hai page.js mein -
+Toh mein apni page.js file mein jaunga-
+
+Command to import a component -
+-------------------------------
+import Header from '@/components/Header';
+
+Ab apply karna hai - 
+--------------------
+toh return ke baad 
+<>
+<Header /> --> yeh Header file chal rhi hai
+</>
+
+// Header.js file mein -
+import React from 'react'
+
+const Header = () => {
+  return (
+    <div className='h-16 px-5 bg-green-500 flex items-center justify-between'>
+        <h2>logo</h2>
+        <div className='flex gap-8'>
+            <h4>About</h4>
+            <h4>Career</h4>
+            <h4>Blog</h4>
+            <h4>Account</h4>
+        </div>
+    </div>
+  )
+}
+
+export default Header
+
+--------------------------------------------------------------------------------------------------------------
+
+ --> props ( normal data, childern )
+
+ Ab manlo mene page.js mein ek variable banaya using useState aur mein chahta hu 
+ vo variable ko Header component mein bhejhna
+ Toh kese bhejhenge?
+
+ Props Drilling -
+ ----------------
+ Parent --> Child 
+
+ Parent
+ ------
+ Page.js mein const [user, setUser] = useState('Sarthak'); --> variable banaya
+ 
+ Child mein bhejhne ke liye-
+ ----------------------------
+ <Header user={user} /> --> Header component jaha ap use kr rhe ho usme attribute bhejho user mtlb vo variable
+                            aur uski value hogi user variable mein jo padi hogi mtlb Sarthak
+  
+ Ab yeh parent se bhejh toh dia lekin child ko milega kese?
+ ----------------------------------------------------------
+ Uske Component mein ka jo function hai usmein as a prop milega 
+
+ Show kese kare uski value ab?
+ -----------------------------
+ import React from 'react'
+
+const Header = (props) => {
+  return (
+    <div className='h-16 px-5 bg-green-500 flex items-center justify-between'>
+        <h2>{props.user}</h2>
+        <div className='flex gap-8'>
+            <h4>About</h4>
+            <h4>Career</h4>
+            <h4>Blog</h4>
+            <h4>Account</h4>
+        </div>
+    </div>
+  )
+}
+
+export default Header
+
+Note-
+-----
+props mein ek object milega hum usme se jo keyname bhejha tha vahi dot marke nikalenge show krne ke liye
+
+HTML ke andar directly object print nahi kar skte isliye props hume milta hai ek object ki form main
+
+--------------------------------------------------------------------------------------------------------------
+
+--> Implementing ajax in react (fetch/axios)
+
+// Routing in React - Ek page se dusre page pe jana without reloading but Url change hoga
+
+page.js file mein -
+--------------------
+import React from 'react'
+
+const page = () => {
+  return (
+    <div>
+      <a href=''>About</a>  
+      <a href=''>Products</a>
+      <a href=''>Courses</a>
+    </div>
+  )
+}
+
+export default page
+
+Steps -
+-------
+Fir app ke andar banao ek folder routing ke liye
+Next ke andar jo app routes vo uska use hai
+App ke andar ek about naam ka page banana tha isliye ek folder banaya About aur usme ek page.js file banayi
+Similary, banaya Product aur Courses ke liye.
+Fir About folder ki page.js file mein --> rfce + Enter --> aur naam change krdo about
+-----------------------------------------------------------------------------------------
+import React from 'react'
+
+const about = () => {
+  return (
+    <div>about</div>
+  )
+}
+
+export default about
+
+Fir Courses folder ki page.js file mein --> rfce + Enter --> aur naam change krdo courses
+-----------------------------------------------------------------------------------------
+import React from 'react'
+
+const courses = () => {
+  return (
+    <div>courses</div>
+  )
+}
+
+export default courses
+
+Fir Product folder ki page.js file mein --> rfce + Enter --> aur naam change krdo product
+-----------------------------------------------------------------------------------------
+import React from 'react'
+
+const product = () => {
+  return (
+    <div>product</div>
+  )
+}
+
+export default product
+
+Fir global.css mein jake tailwind css hatado aur apply krdo normal css -
+-----------------------------------------------------------------
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gilroy';
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+a{
+    display: block;
+    margin: 30px;
+}
+
+Fir apne app folder ke andar page.js file mein aake-
+-----------------------------------------------------
+
+import React from 'react'
+
+const page = () => {
+  return (
+    <div>
+      <h1>This is homepage</h1>
+      <a href='/About'>About</a>
+      <a href='/Product'>Product</a>
+      <a href='/Courses'>Courses</a>
+    </div>
+  )
+}
+
+export default page
+
+Note-
+-----
+Routing ho rhi hogi but page bhi reload ho raha hoga, so we use <Link> tag instead of <a> tag
+
+How to use Link?
+----------------
+1. import Link from 'next/link';
+Use this-
+2. <Link href='/About'>About</Link>
+   <Link href='/About'>About</Link>
+   <Link href='/About'>About</Link>
+
+import React from 'react'
+
+import Link from 'next/link';
+
+const page = () => {
+  return (
+    <div>
+      <h1>This is homepage</h1>
+      {/* Isey reloading hogi */}
+      {/* <a href='/About'>About</a>
+      <a href='/Product'>Product</a>
+      <a href='/Courses'>Courses</a> */}
+
+      {/* Isey reloading nahi hogi */}
+      <Link href='/About'>About</Link>
+      <Link href='/Product'>Product</Link>
+      <Link href='/Courses'>Courses</Link>
+
+    </div>
+  )
+}
+
+export default page
+
+Note-
+------
+<Link href='/About'>About</Link>
+<Link href='/Product'>Product</Link>
+<Link href='/Courses'>Courses</Link>
+
+Yeh baar baar likhna pad raha hai toh mein yeh nahi chahta.
+
+Toh mein kya krunga?
+--------------------
+Mene Header Component Banaya tha mein vaha jaunga Header.js file mein
+
+import React from 'react'
+
+import Link from 'next/link';
+
+const Header = () => {
+    
+  return (
+    <div className='h-16 px-5 bg-green-500 flex items-center justify-between'>
+        <h2>Logo</h2>
+        <div className='flex gap-8'>
+            {/* <h4>{props.editor}</h4>
+            <h4>Career</h4>
+            <h4>Blog</h4>
+            <h4>Account</h4> */}
+
+// Yeh link daldo yaha aur import krlo Link ko -
+       <Link href='/About'>About</Link>
+       <Link href='/Product'>Product</Link>
+       <Link href='/Courses'>Courses</Link>
+        </div>
+    </div>
+  )
+}
+
+export default Header
+
+Global.css file mein jake normal css hatado aur tailwind css lagado-
+--------------------------
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+Fir apne page.js file mein jaake-
+---------------------------------
+import React from 'react'
+
+// Import krlo
+import Header from '@/Components/Header'
+
+
+const page = () => {
+  return (
+    <div>
+      
+      // Use krlo yaha
+      <Header />
+
+      <h1>This is homepage</h1>
+
+      {/* Isey reloading hogi */}
+      {/* <a href='/About'>About</a>
+      <a href='/Product'>Product</a>
+      <a href='/Courses'>Courses</a> */}
+
+      {/* Isey reloading nahi hogi */}
+      {/* But baar baar nahi likhna mujhe */}
+      {/* <Link href='/About'>About</Link>
+      <Link href='/Product'>Product</Link>
+      <Link href='/Courses'>Courses</Link> */}
+
+    </div>
+  )
+}
+
+export default page
+
+
+Ab mein chahta hu yeh header sab pages mein dikhe har route mein-
+-------------------------------------------------------------------
+About folder --> page.js file -
+
+Do 2 things-
+------------
+1.Import kro Header Component ko
+2. Header ko return kro
+
+import React from 'react'
+
+import Header from '@/Components/Header'
+
+const about = () => {
+  return (
+    <div>
+      <Header/>
+      <h1>About Page</h1>
+    </div>
+  )
+}
+
+export default about
+
+Product folder --> page.js file -
+
+Do 2 things-
+------------
+1.Import kro Header Component ko
+2. Header ko return kro
+
+import React from 'react'
+
+import Header from '@/Components/Header'
+
+const product = () => {
+  return (
+    <div>
+      <Header/>
+      <h1>Product Page</h1>
+    </div>
+  )
+}
+
+export default product
+
+Courses folder --> page.js file -
+
+Do 2 things-
+------------
+1.Import kro Header Component ko
+2. Header ko return kro
+
+import React from 'react'
+
+import Header from '@/Components/Header'
+
+const courses = () => {
+  return (
+    <div>
+      <Header/>
+      <h1>Courses Page</h1>
+    </div>
+  )
+}
+
+export default courses
+
+Note-
+------
+Ab hume har route pr jaane par header milega.
+
+Flow Janlo -
+-------------
+Main File --> page.js 
+Isme mere pass Header component jisme hai navbar jisme hai kch links pehle yeh dikhega fir Heading
+
+Fir mera agr About pe click krta hu toh /about page pe chla jaunga jisme pehle header component dikhage then a heading.
+
+Fir mera agr Product pe click krta hu toh /product page pe chla jaunga jisme pehle header component dikhage then a heading.
+
+Fir mera agr Courses pe click krta hu toh /courses page pe chla jaunga jisme pehle header component dikhage then a heading.
+
+Vo bhi without reloading.
+
+Ab Isme bhi ek dikhat hai pucho kya?
+------------------------------------
+Har Page mein mujhe yeh <Header/> likhna pad rha hai.
+
+Toh abhi toh kch h page hai agr boht saare pages hogye for ex: Myntra isme har ek element ke liye alg alg page hai toh dikht hogi hume
+
+Toh hum kya krenge?
+-------------------
+layouts.js mein jake-
+---------------------
+import "./globals.css";
+
+import Header from "@/Components/Header";
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>
+      // Sabse pehle yeh header daldo aur import krlo
+        <Header />
+        {children}
+        </body>
+    </html>
+  );
+}
+
+Fir apne saare main page.js, About ka page.js, Product ka page.js, Courses ka page.js file mein se Header hatado import bhi.
+
+---------------------------------------------------------------------------------------------------------------
+
+--> How to Call Api in your react Application?
+---------------------------------------------
+Open a new terminal and type command -
+tarunkumar@Taruns-MacBook-Air React % npm i axios
+Axios --> Api ko call krne ka kaam karta hai.
+Api--> Communicator 
+
+Fir Install hone ke baad Import kro apni main page.js file mein-
+---------------------------------------------------------------
+import axios from 'axios';
+
+Note-
+------
+Lorem Picsum API ko use krne wale hai hum ab jo hume random images deti hai free of cost.
+
+API URL - https://picsum.photos/v2/list
+
+Fir apne main page.js file mein jake -
+-------------------------------------
+'use client'
+
+import React from 'react'
+
+import axios from 'axios';
+
+const page = () => {
+  const getImages = () => {
+    console.log("Images Lelo");
+  }
+  return (
+    <div>
+      <button onClick={getImages} className='px-5 py-3 bg-green-600 text-white font-bold'>Get Images</button>
+      <div className='p-10'>
+
+      </div>
+    </div>
+  )
+}
+
+export default page
+
+Ab yeh API Call ho rhi hogi toh hum ab kya krega ki yaha-
+---------------------------------------------------------
+const getImages = () => {
+    const response = axios.get('https://picsum.photos/v2/list');
+    console.log(response); --> Response mein ek response milega lekin yeh ek Promise hai. 
+  }
+
+Response mein ek response milega lekin yeh ek Promise hai. 
+Aur humko isey handle krna padta hai kuch is tareeke se-
+---------------------------------------------------------
+
+ const getImages = async () => {
+    const response = await axios.get('https://picsum.photos/v2/list');
+    console.log(response);
+  }
+
+Async await lagaya toh yaha hume cheezein mil rhi hongi in the form of this-
+------------------------------------------------------------------------------
+--> {data: Array(30), status: 200, statusText: '', headers: AxiosHeaders, config: {…}, …}
+
+Ho skta hai kch error bhi aajaye toh hum trycatch use krenge-
+-------------------------------------------------------------
+  const getImages = async () => {
+    try {
+    const response = await axios.get('https://picsum.photos/v2/list');
+    console.log(response); --> Yaha mil rha h data
+    } catch (error) {
+    console.error("Error Fetching Images");
+    }
+  }
+
+FLOW-
+------
+Mene ek button banaya jispe ek event lagaya onClick toh ek function chl rha hoga getImages jo ki async function hai
+jo ki await mtlb wait kr rha hoga jb tak data nahi milega us api se
+aur response mene print krva dia
+Toh jese hi click response mil rha hoga console Mein
+Ab mein response.data console krunga toh data mil rha hoga jisme 30 images mil rhi hongi in the form of objects
+ek variable bana dia data = response.data jisme save kralia.
+fir console.log(data) --> jisme data mil rha hai
+
+Ab data ko mujhe dikhana hai?
+-----------------------------
+Toh mujhe useState use krna padega
+const [Images, setImages] = useState([])
+Images naam ka array hai jo khali hai
+Isme Map lagega
+
+Ab jaha data mil rha hoga uske niche mein bolunga-
+---------------------------------------------------
+setImages(data);
+Jo data mil rha hai usey images wale empty array mein daldo.
+Fir niche console.log(Images);
+Taaki pehle khali tha array jese hi data milega vo images mein set hojayega
+
+Ab Get Images button pe click karne se mujhe data mil rha hai
+Ab mujhe yeh chahiye print kese karayenge toh?
+----------------------------------------------
+Uske liye map naam ka function lagega
+{Images.map((elem, i)=>{
+  return <img key={i} src={elem.download_url} height={300} width={300} className='p'
+})}
+
+map ke andar element mtlb har ek object mil rha hai, i mtlb index
+aur isme mein de rha hu ek key basically har ek element ke liye hume unique identity deni padti hai.
+Toh index ke liye i pass kra aur uske liye bana dia key={i}
+Aur return toh karao.
+
+Note-
+-----
+console.log(response.data); --> Yaha mil rha 30 images in the form of Arrays of objects
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
