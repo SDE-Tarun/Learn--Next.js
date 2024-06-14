@@ -5,7 +5,7 @@ ADVANCED TOPICS FOR REACT -
 1. ES5 VS ES6
 2. ARRAY, OBJECTS, FUNCTIONS
 3. ARROW FUNCTIONS / NORMAL FUNCTIONS
-4. ARRYA METHODS ( MAP, FILTER ,REDUCE, FIND, FINDINDEX )
+4. ARRAY METHODS ( MAP, FILTER ,REDUCE, FIND, FINDINDEX )
 5. DESTRUCTURING
 6. REST SPREAD
 7. TRY CATCH
@@ -28,7 +28,7 @@ FRAMEWORK- Jese mujhe ghar banana hai toh mere pass 2 options hai -
             1. Mein bana banaya ghar kharid loon but isey mein ghar mein zyda changes nahi kar sakta, 
                mtlb jo cheezein hai unhi ko use kar loon kuch kuch changes ke sath jese ghar ka color change kar loon.
 
-NOTE -
+NOTE - 
 REACT jab tak library thi na vo client side rendering kar rhhi thi.
 CSR - Jaha se user webiste dekh raha hai uski side se rendering hoti hai, sirf frontend ka part hota hai.
 
@@ -40,9 +40,6 @@ Why?
 3. Next.js mein SSR toh data fast flow krega.
 4. mtlb folder next ka banaya hai, use next ki cheezein kr rhe hai lekin react ke jo code components hai vo bhi 
    sikh rhe h sath sath next.js ke integration bhi sikh rhe hai.
-
-
-
 
 REACTJS + NEXTJS -
 NEXTJS is a Framework toh isey react ke paas power aagyi hai ki vo SSR bhi kar skta hai, isliye AB 2 side se hoti hai CSR AND SSR .
@@ -83,12 +80,12 @@ Need to install the following packages:
 create-next-app@14.2.3
 Ok to proceed? (y) y
 ✔ What is your project named? … react-for-youtube
-✔ Would you like to use TypeScript? … No / Yes
-✔ Would you like to use ESLint? … No / Yes
-✔ Would you like to use Tailwind CSS? … No / Yes
-✔ Would you like to use `src/` directory? … No / Yes
-✔ Would you like to use App Router? (recommended) … No / Yes
-✔ Would you like to customize the default import alias (@/*)? … No / Yes
+✔ Would you like to use TypeScript? … No / Yes --> No
+✔ Would you like to use ESLint? … No / Yes --> No
+✔ Would you like to use Tailwind CSS? … No / Yes --> Yes
+✔ Would you like to use `src/` directory? … No / Yes --> No
+✔ Would you like to use App Router? (recommended) … No / Yes --> Yes
+✔ Would you like to customize the default import alias (@/*)? … No / Yes --> No
 Creating a new Next.js app in /Users/tarunkumar/Desktop/React/react-for-youtube.
 
 Using npm.
