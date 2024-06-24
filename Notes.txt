@@ -816,11 +816,7 @@ Note-
 -----
 console.log(response.data); --> Yaha mil rha 30 images in the form of Arrays of objects
 
-
-
-
-
-
+---------------------------------------------------------------------------------------------------------------
 
 
 
